@@ -5,6 +5,7 @@ import db from "./firebase";
 
 function Chats() {
   const [chats, setChats] = useState([]);
+  const[messages,setMessages] = useState([])
 
   useEffect(() => {
     db.collection("chats")
@@ -13,6 +14,7 @@ function Chats() {
         setChats(snapshot.docs.map((doc) => doc.data()))
       );
   }, []);
+
 
   return (
     <div className="chats">
@@ -24,26 +26,7 @@ function Chats() {
           timestamp={chat.timestamp}
         />
       ))}
-      <Chat
-        name="Sarah"
-        message="Hey sexy!"
-        timestamp="35 minutes ago"
-        profilePic=""
-      />
-
-      <Chat
-        name="Sarah"
-        message="Hey sexy!"
-        timestamp="35 minutes ago"
-        profilePic=""
-      />
-
-      <Chat
-        name="Sarah"
-        message="Hey sexy!"
-        timestamp="35 minutes ago"
-        profilePic=""
-      />
+    
     </div>
   );
 }
