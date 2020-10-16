@@ -7,7 +7,7 @@
   border: 1px solid #f9f9f9;
 }
 
-.header > img {
+.header__logo {
   object-fit: contain;
   height: 50px;
 }
